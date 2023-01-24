@@ -3,6 +3,7 @@ const INITIAL_VELOCITY = 0.025;
 export default class Ball {
   constructor(ballEl) {
     this.ballEl = ballEl;
+    this.reset();
   }
 
   get x() {
@@ -20,11 +21,11 @@ export default class Ball {
   set y(value) {
     this.ballEl.style.setProperty("--y", value);
   }
-
+  // RIGHT
   reset() {
     this.x = 50;
     this.y = 50;
-    this.direction = { x: 0.75, y: 0.5 };
+    this.direction = { x: 0 };
     while (
       Math.abs(this.direction.x) <= 0.2 ||
       Math.abs(this.direction.x) >= 0.9
@@ -36,8 +37,8 @@ export default class Ball {
   }
 
   update(delta) {
-    this.x += 0.25;
-    this.y += 0.49;
+    this.x += this.direction.x;
+    this.y += this.direction.y;
   }
 }
 
