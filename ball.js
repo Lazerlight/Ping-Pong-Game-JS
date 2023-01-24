@@ -47,11 +47,15 @@ export default class Ball {
 
     if (rect.bottom >= window.innerHeight || rect.top <= 0) {
       this.direction.y *= -1;
-      this.velocity += 0.05;
+      if (this.velocity <= 10) {
+        this.velocity += 0.05;
+      }
     }
     if (rect.right >= window.innerWidth || rect.left <= 0) {
       this.direction.x *= -1;
-      this.velocity += 0.05;
+      if (this.velocity <= 10) {
+        this.velocity += 0.05;
+      }
     }
   }
 }
