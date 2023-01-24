@@ -36,8 +36,8 @@ export default class Ball {
   }
 
   update(delta) {
-    this.x += this.direction.x * INITIAL_VELOCITY * delta;
-    this.y += this.direction.y * INITIAL_VELOCITY * delta;
+    this.x += 0.25;
+    this.y += 0.49;
   }
 }
 
