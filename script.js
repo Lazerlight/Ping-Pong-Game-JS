@@ -30,8 +30,10 @@ function handleLose() {
   const rect = ball.rect();
   if (rect.right >= window.innerWidth) {
     playerScore.textContent = parseInt(playerScore.textContent) + 1;
+    ball.playScored();
   } else {
     computerScore.textContent = parseInt(computerScore.textContent) + 1;
+    // ball.playScored();
   }
   ball.reset();
   computerPaddle.reset();

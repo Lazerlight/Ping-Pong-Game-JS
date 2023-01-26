@@ -26,6 +26,15 @@ export default class Ball {
     return this.ballEl.getBoundingClientRect();
   }
 
+  playScored() {
+    let audio = new Audio("./AudioFiles/scored.mp3");
+    audio.play();
+  }
+  playBall() {
+    let audio = new Audio("./AudioFiles/pingPongBall.mp3");
+    audio.play();
+  }
+
   reset() {
     this.x = 50;
     this.y = 50;
@@ -54,6 +63,10 @@ export default class Ball {
 
     if (paddleRects.some((r) => isCollision(r, rect))) {
       this.direction.x *= -1;
+      this.playBall();
+      if (this.velocity <= 10) {
+        this.velocity += 0.1;
+      }
     }
   }
 }
