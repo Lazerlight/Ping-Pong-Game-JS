@@ -15,10 +15,13 @@ export default class Paddle {
     this.paddleEl.style.setProperty("--position", value);
   }
 
-  update(delta, ballHeight) {
+  update(ballHeight) {
     this.position += SPEED * (ballHeight - this.position);
   }
   reset() {
     this.position = 50;
+  }
+  rect() {
+    return this.paddleEl.getBoundingClientRect();
   }
 }

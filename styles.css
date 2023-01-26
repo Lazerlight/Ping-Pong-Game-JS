@@ -23,15 +23,16 @@ body {
   height: 10vh;
   top: calc(var(--position) * 1vh);
   transform: translateY(-50%);
-  width: 1vh;
+  width: 2vh;
+  border-radius: 1vh;
 }
 
 .paddle.left {
-  left: 1vw;
+  left: 2vw;
 }
 
 .paddle.right {
-  right: 1vw;
+  right: 2vw;
 }
 
 .ball {
